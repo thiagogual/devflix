@@ -14,7 +14,7 @@ const CodeAnimation = () => {
     // Exemplos de trechos de código
     const codeSnippets = [
       'function hello() { console.log("Hello, Dev!"); }',
-      'const app = () => { return <div>DevFlix</div>; }',
+      'const app = () => { return <div>TFGflix</div>; }',
       'import React from "react";',
       'npm install tailwindcss',
       'git commit -m "Initial commit"',

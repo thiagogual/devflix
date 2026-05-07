@@ -27,7 +27,7 @@ const ErrorPageStandalone = ({ message = "Página não encontrada", code = 404, 
           
           <p className="text-gray-300 mb-8">
             A página que você está procurando não foi encontrada ou não está disponível.
-            {showHomeLink && " Por favor, selecione uma DevFlix disponível ou retorne para a página inicial."}
+            {showHomeLink && " Por favor, selecione uma TFGflix disponível ou retorne para a página inicial."}
           </p>
           
           {showHomeLink && (

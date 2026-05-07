@@ -132,7 +132,7 @@ const Loading = () => {
                   filter: 'drop-shadow(0 0 30px rgba(229, 9, 20, 0.5))',
                 }}
               >
-                DEVFLIX
+                TFGFLIX
               </span>
             </motion.div>
           </div>

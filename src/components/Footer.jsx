@@ -194,7 +194,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-gray-500 text-sm">
-            &copy; 2026 DevFlix. Todos os direitos reservados.
+            &copy; 2026 TFGflix by TFG ONE. Todos os direitos reservados.
           </p>
           <p className="text-gray-600 text-xs flex items-center gap-2">
             Feito com <span className="text-netflix-red">❤️</span> para programadores

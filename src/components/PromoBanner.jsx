@@ -23,7 +23,7 @@ const PromoBanner = ({ banner, enabled = false, onToggle }) => {
   // Valores padrão para caso algum campo esteja faltando
   const {
     title = '', 
-    text = 'Bem-vindo à DevFlix!',
+    text = 'Bem-vindo à TFGflix!',
     buttonText,
     buttonLink,
     backgroundColor = '#E50914',
