@@ -1,0 +1,398 @@
+/* IAFlix Theme - AI & Tech Focused Styling */
+
+:root {
+  --ai-primary: #00D9FF;
+  --ai-secondary: #FF00FF;
+  --ai-accent: #00FF88;
+  --ai-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ai-gradient-2: linear-gradient(135deg, #00D9FF 0%, #FF00FF 100%);
+  --ai-gradient-3: linear-gradient(135deg, #00FF88 0%, #00D9FF 100%);
+  --ai-dark: #0A0E27;
+  --ai-darker: #050714;
+  --ai-light-dark: #1A1F3A;
+  --ai-glow: rgba(0, 217, 255, 0.5);
+  --ai-purple-glow: rgba(255, 0, 255, 0.3);
+  --matrix-green: #00FF41;
+}
+
+/* Neural Network Background Animation */
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes data-flow {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+}
+
+@keyframes ai-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--ai-glow); }
+  50% { box-shadow: 0 0 40px var(--ai-glow), 0 0 60px var(--ai-purple-glow); }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes circuit-trace {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes holographic {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* AI Themed Button Styles */
+.btn-ai-primary {
+  background: var(--ai-gradient-2);
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-ai-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-ai-primary:hover::before {
+  left: 100%;
+}
+
+.btn-ai-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+  border-color: var(--ai-primary);
+}
+
+.btn-ai-secondary {
+  background: transparent;
+  color: var(--ai-primary);
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 2px solid var(--ai-primary);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-ai-secondary:hover {
+  background: var(--ai-primary);
+  color: var(--ai-dark);
+  box-shadow: 0 0 30px var(--ai-glow);
+  transform: translateY(-2px);
+}
+
+/* Neural Network Background */
+.neural-network-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.neural-network-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, var(--ai-purple-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, var(--ai-glow) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+  animation: neural-pulse 4s ease-in-out infinite;
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--matrix-green);
+  text-shadow: 0 0 10px var(--matrix-green);
+  animation: matrix-rain 10s linear infinite;
+  opacity: 0.8;
+}
+
+/* AI Card Styles */
+.ai-card {
+  background: linear-gradient(135deg, var(--ai-light-dark) 0%, var(--ai-dark) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ai-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--ai-gradient-2);
+  animation: holographic 3s linear infinite;
+}
+
+.ai-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3);
+  border-color: var(--ai-primary);
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-1 0.5s infinite;
+  color: var(--ai-primary);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-2 0.5s infinite;
+  color: var(--ai-secondary);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
+  40% { clip-path: inset(50% 0 20% 0); transform: translate(2px, -2px); }
+  60% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 1px); }
+  80% { clip-path: inset(80% 0 5% 0); transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+  40% { clip-path: inset(20% 0 40% 0); transform: translate(-2px, 2px); }
+  60% { clip-path: inset(70% 0 15% 0); transform: translate(1px, -2px); }
+  80% { clip-path: inset(5% 0 85% 0); transform: translate(-1px, 1px); }
+}
+
+/* Holographic Gradient Text */
+.holographic-text {
+  background: linear-gradient(90deg, 
+    var(--ai-primary) 0%, 
+    var(--ai-secondary) 25%, 
+    var(--ai-accent) 50%, 
+    var(--ai-secondary) 75%, 
+    var(--ai-primary) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic-shift 3s linear infinite;
+}
+
+@keyframes holographic-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Circuit Board Pattern */
+.circuit-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+/* Data Stream Animation */
+.data-stream {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, var(--ai-primary), transparent);
+  animation: data-flow 3s linear infinite;
+}
+
+/* AI Loading Animation */
+.ai-loader {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.ai-loader::before,
+.ai-loader::after {
+  content: '';
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: ai-spin 2s linear infinite;
+}
+
+.ai-loader::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top-color: var(--ai-primary);
+  animation-delay: 0s;
+}
+
+.ai-loader::after {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-bottom-color: var(--ai-secondary);
+  animation-delay: 0.5s;
+  animation-direction: reverse;
+}
+
+@keyframes ai-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tech Grid Background */
+.tech-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: grid-move 10s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
+/* Quantum Particle Effect */
+.quantum-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--ai-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--ai-glow);
+  animation: particle-float 20s infinite linear;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* AI Pulse Effect */
+.ai-pulse {
+  animation: ai-pulse-effect 2s ease-in-out infinite;
+}
+
+@keyframes ai-pulse-effect {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Neon Text Glow */
+.neon-text {
+  color: var(--ai-primary);
+  text-shadow: 
+    0 0 10px var(--ai-glow),
+    0 0 20px var(--ai-glow),
+    0 0 30px var(--ai-glow),
+    0 0 40px var(--ai-primary);
+  animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
